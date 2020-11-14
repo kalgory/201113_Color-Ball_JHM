@@ -7,8 +7,10 @@
 
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-  // insert code here...
-  std::cout << "Hello, JHM!\n";
-  return 0;
+int main()
+{
+  for(int i = 0; i < 4; i++)
+  {
+    std::cout << "test" << std::endl;
+  }
 }
