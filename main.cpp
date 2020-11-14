@@ -6,12 +6,43 @@
 //
 
 #include <iostream>
+#include <vector>
 
-int main() 
+using namespace std;
+
+
+vector<int> getOutput(int number, vector<int>& color, vector<int>& size)
 {
-  for(int i = 0; i < 4; i++)
+  vector<int> output(number);
+  
+  for(int i = 0; i < number; i++)
   {
-    std::cout << "test" << std::endl;
-    std::cout << "sibal" << std::endl;
+    for(int j = 0; j < number; j++)
+    {
+      if (color[i] != color[j] && size[i] > size[j])
+      {
+        output[i] += size[j];
+      }
+    }
   }
+  
+  return output;
+}
+
+int main()
+{
+  int number;
+  cin >> number;
+  
+  vector<int> color(number);
+  vector<int> size(number);
+  
+  for(int i = 0; i < number; i++)
+    cin >> color[i] >> size[i];
+  
+  vector<int> output = getOutput(number, color, size);
+  for(int i = 0; i < number; i++)
+    cout << output[i] << endl;
+  
+  return 0;
 }
