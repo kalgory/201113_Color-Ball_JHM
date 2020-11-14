@@ -12,5 +12,6 @@ int main()
   for(int i = 0; i < 4; i++)
   {
     std::cout << "test" << std::endl;
+    std::cout << "sibal" << std::endl;
   }
 }
